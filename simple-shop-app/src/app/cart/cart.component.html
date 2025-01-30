@@ -8,5 +8,9 @@
     </div>
   </div>
   <h4>Total: {{ cartTotal | currency:'USD' }}</h4>
-  <div id="paypal-button-container"></div> <!-- Ensure this container exists -->
+  
+  <!-- ✅ Add the checkout button -->
+  <button class="btn btn-primary mt-3" (click)="checkout()">Proceed to Checkout</button>
+
+  <div id="paypal-button-container"></div> <!-- PayPal button container -->
 </div>
