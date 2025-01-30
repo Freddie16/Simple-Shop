@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "@netlify/functions": "^3.0.0",
     "@nguniversal/builders": "^16.2.0",
+    "@nguniversal/common": "^16.2.0",
     "@nguniversal/express-engine": "^16.2.0",
     "bootstrap": "^5.3.3",
     "express": "^4.21.2"

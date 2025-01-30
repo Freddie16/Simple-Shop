@@ -1,0 +1,14 @@
+[build]
+  command = "ng build"
+  publish = "dist/simple-shop-app"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[dev]
+  command = "npm run start"
+  port = 4200
+  publish = "dist/simple-shop-app"
