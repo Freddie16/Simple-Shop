@@ -1,59 +1,156 @@
-# SimpleShopApp
+Simple Shop - Angular E-Commerce App
+Welcome to Simple Shop, a fully functional e-commerce web application built with Angular. This app allows users to browse products, add them to a cart, and complete purchases using PayPal. Below is a detailed guide to help you understand, set up, and run the app.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+Table of Contents
+Features
 
-## Development server
+Technologies Used
 
-To start a local development server, run:
+Setup Instructions
 
-```bash
+Running the App
+
+Folder Structure
+
+API Integration
+
+PayPal Integration
+
+Testing
+
+Deployment
+
+Contributing
+
+License
+
+Features
+Home Page: Displays featured products and categories.
+
+Product Search: Search for products by name.
+
+Product Details: View detailed information about a product.
+
+Categories: Browse products by category.
+
+Cart: Add, remove, and manage items in the cart.
+
+Checkout: Complete purchases using PayPal.
+
+Responsive Design: Works seamlessly on desktop, tablet, and mobile devices.
+
+Technologies Used
+Frontend: Angular (v17+)
+
+Styling: Bootstrap, CSS
+
+State Management: RxJS (BehaviorSubject)
+
+Payment Gateway: PayPal
+
+API: FAKE Store API (https://fakestoreapi.com)
+
+Routing: Angular Router
+
+Testing: Jasmine, Karma (optional)
+
+Setup Instructions
+Prerequisites
+Node.js: Ensure you have Node.js installed (v16+ recommended).
+
+Angular CLI: Install Angular CLI globally:
+
+bash
+Copy
+npm install -g @angular/cli
+Steps
+Clone the Repository:
+
+bash
+Copy
+git clone git@github.com:Freddie16/Simple-Shop.git
+cd simple-shop
+Install Dependencies:
+
+bash
+Copy
+npm install
+Set Up Environment Variables:
+
+Create a .env file in the root directory:
+
+Copy
+PAYPAL_CLIENT_ID=your_paypal_client_id
+
+Run the App:
+
+bash
+Copy
 ng serve
-```
+The app will be available at http://localhost:4200.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Running the App
+Home Page:
 
-## Code scaffolding
+Browse featured products and categories.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Click on a product to view details.
 
-```bash
-ng generate component component-name
-```
+Cart:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Add products to the cart.
 
-```bash
-ng generate --help
-```
+Remove products from the cart.
 
-## Building
+Proceed to checkout.
 
-To build the project run:
+Checkout:
 
-```bash
-ng build
-```
+Complete the purchase using PayPal.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+API Integration
+The app uses the FAKE Store API to fetch product and category data. Below are the key API endpoints:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Get All Products: https://fakestoreapi.com/products
 
-```bash
+Get Product by ID: https://fakestoreapi.com/products/{id}
+
+Get All Categories: https://fakestoreapi.com/products/categories
+
+Get Products by Category: https://fakestoreapi.com/products/category/{category}
+
+PayPal Integration
+The app integrates PayPal for payment processing. Here’s how it works:
+
+Client-Side:
+
+The PayPal SDK is loaded in index.html.
+
+The CheckoutComponent renders the PayPal button and handles payment approval.
+
+
+
+Testing
+To run unit tests:
+
+bash
+Copy
 ng test
-```
+To run end-to-end tests:
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+bash
+Copy
 ng e2e
-```
+Deployment
+Steps to Deploy
+Build the App:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Support
+If you encounter any issues or have questions, feel free to open an issue on GitHub or contact the maintainers.
+
+Happy Shopping! 🛒
