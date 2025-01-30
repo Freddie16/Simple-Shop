@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,45 +8,47 @@ export class CartService {
   private cartItems: any[] = [];
   private cartCount = new BehaviorSubject<number>(0);
   private cartTotal = new BehaviorSubject<number>(0);
-  private cartItemsSubject = new BehaviorSubject<any[]>([]); // ✅ Fix: Observable cartItems
 
   constructor() {}
 
-  // ✅ Fix: Return an observable instead of direct array access
-  getCartItems(): Observable<any[]> {
-    return this.cartItemsSubject.asObservable();
-  }
-
-  getCartCount(): Observable<number> {
-    return this.cartCount.asObservable();
-  }
-
-  getCartTotal(): Observable<number> {
-    return this.cartTotal.asObservable();
-  }
-
-  addToCart(product: any): void {
+  // Add a product to the cart
+  addToCart(product: any) {
     this.cartItems.push(product);
-    this.updateCart();
-  }
-
-  removeFromCart(product: any): void {
-    this.cartItems = this.cartItems.filter((item) => item.id !== product.id);
-    this.updateCart();
-  }
-
-  clearCart(): void {
-    this.cartItems = [];
-    this.updateCart();
-  }
-
-  private updateCart(): void {
-    this.cartItemsSubject.next(this.cartItems); // ✅ Fix: Notify subscribers
     this.cartCount.next(this.cartItems.length);
     this.cartTotal.next(this.calculateTotal());
   }
 
-  private calculateTotal(): number {
+  // Get the current cart items
+  getCartItems() {
+    return this.cartItems;
+  }
+
+  // Get the cart count as an observable
+  getCartCount() {
+    return this.cartCount.asObservable();
+  }
+
+  // Get the cart total as an observable
+  getCartTotal() {
+    return this.cartTotal.asObservable();
+  }
+
+  // Remove an item from the cart
+  removeFromCart(item: any) {
+    this.cartItems = this.cartItems.filter((i) => i.id !== item.id); // Remove the item
+    this.cartCount.next(this.cartItems.length); // Update cart count
+    this.cartTotal.next(this.calculateTotal()); // Update cart total
+  }
+
+  // Clear the cart
+  clearCart() {
+    this.cartItems = [];
+    this.cartCount.next(0);
+    this.cartTotal.next(0);
+  }
+
+  // Calculate the total amount of the cart
+  private calculateTotal() {
     return this.cartItems.reduce((total, item) => total + item.price, 0);
   }
 }

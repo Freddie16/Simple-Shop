@@ -19,18 +19,15 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.getCartItems().subscribe((items) => {
-      this.cartItems = items;
-    });
-
+    this.cartItems = this.cartService.getCartItems(); // Get cart items
     this.cartService.getCartTotal().subscribe((total) => {
-      this.cartTotal = total;
+      this.cartTotal = total; // Get cart total
     });
   }
 
-  // ✅ Fix: Implement `removeFromCart()`
+  // ✅ Add the `removeFromCart` method
   removeFromCart(item: any) {
-    this.cartService.removeFromCart(item);
+    this.cartService.removeFromCart(item); // Call the CartService method
   }
 
   // Checkout with PayPal
