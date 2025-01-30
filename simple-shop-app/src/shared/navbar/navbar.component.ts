@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../app/services/cart.service';
-import { ProductService } from '../../app/services/product.service';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router'; // Import Router
 import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
+import { RouterLink } from '@angular/router'; // Add this import
+import { CommonModule } from '@angular/common'; // Add this import
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule], // Add FormsModule
+  imports: [FormsModule, RouterLink, CommonModule], // Add FormsModule
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private productService: ProductService
+    private router: Router // Inject Router
   ) {}
 
   ngOnInit(): void {
@@ -31,8 +31,8 @@ export class NavbarComponent implements OnInit {
   // Add search functionality
   search() {
     if (this.searchQuery) {
-      // Implement search logic here (e.g., navigate to a search results page)
-      console.log('Searching for:', this.searchQuery);
+      // Navigate to the ProductSearchComponent with the search query
+      this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
     }
   }
 }

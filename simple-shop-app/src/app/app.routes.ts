@@ -4,6 +4,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CategoriesComponent } from './categories/categories.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductSearchComponent } from './product-search/product-search.component'; // Import ProductSearchComponent
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route
@@ -12,4 +14,6 @@ export const routes: Routes = [
   { path: 'categories/:category', component: CategoriesComponent }, // Products by category route
   { path: 'cart', component: CartComponent }, // Cart route
   { path: 'checkout', component: CheckoutComponent }, // Checkout route
+  { path: 'search', component: ProductSearchComponent }, // Search route
+
 ];
