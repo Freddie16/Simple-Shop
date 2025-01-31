@@ -9,7 +9,6 @@ declare var paypal: any; // Declare PayPal SDK
   standalone: true,
   imports: [CommonModule], // ✅ Ensure CommonModule is imported
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   cartItems: any[] = [];

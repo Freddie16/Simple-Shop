@@ -9,7 +9,6 @@ declare var paypal: any; // Declare PayPal SDK globally
   standalone: true,
   imports: [CommonModule], // ✅ Include CommonModule for the currency pipe
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
   cartTotal: number = 0;

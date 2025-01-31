@@ -9,7 +9,6 @@ import { RouterLink } from '@angular/router'; // Import RouterLink
   standalone: true,
   imports: [CommonModule, RouterLink], // Add RouterLink here
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
   products: any[] = [];

@@ -9,7 +9,6 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink], // Add CommonModule and RouterLink
   templateUrl: './product-search.component.html',
-  styleUrls: ['./product-search.component.scss'],
 })
 export class ProductSearchComponent implements OnInit {
   searchQuery: string = '';

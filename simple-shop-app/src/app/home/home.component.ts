@@ -9,7 +9,6 @@ import { RouterLink } from '@angular/router'; // Add this import
   standalone: true, // Ensure this is a standalone component
   imports: [CommonModule, RouterLink], // Add RouterLink here
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   products: any[] = [];

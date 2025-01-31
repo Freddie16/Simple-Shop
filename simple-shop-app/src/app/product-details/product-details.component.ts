@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common'; // Add this import
   standalone: true,
   imports: [CommonModule], // Add CommonModule if needed
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
   product: any;

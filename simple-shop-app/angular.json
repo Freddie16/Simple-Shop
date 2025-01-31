@@ -15,13 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "prerender": false,
-           
             "outputPath": "dist/simple-shop-app",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",   
             "polyfills": [
               "zone.js"
             ],
@@ -35,15 +33,10 @@
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-            ],  
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -65,6 +58,21 @@
               "optimization": true,
               "extractLicenses": false,
               "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/simple-shop-app/server",
+            "main": "src/main.server.ts",  
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "sourceMap": false,
+              "optimization": true
             }
           },
           "defaultConfiguration": "production"

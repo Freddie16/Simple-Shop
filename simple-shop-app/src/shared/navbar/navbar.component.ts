@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common'; // Add this import
   standalone: true,
   imports: [FormsModule, RouterLink, CommonModule], // Add FormsModule
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
   cartCount: number = 0;

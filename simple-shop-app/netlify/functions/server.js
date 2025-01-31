@@ -1,4 +1,4 @@
-const app = require('../../dist/simple-shop-app/server/main.js');
+const server = require('../../dist/simple-shop-app/server/main.server.mjs');
 
 exports.handler = async function(event, context) {
   const response = await app.handle(event);
