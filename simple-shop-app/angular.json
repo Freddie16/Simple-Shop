@@ -66,8 +66,8 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/simple-shop-app/server",
-            "main": "src/main.server.ts",  
-            "tsConfig": "tsconfig.server.json"
+            "main": "src/main.server.ts"  
+            
           },
           "configurations": {
             "production": {
