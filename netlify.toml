@@ -1,4 +1,4 @@
 [build]
-  command = "cd simple-shop-app && npm install && ng build --prod"
+  command = "cd simple-shop-app && npm install && ng build --configuration production"
   publish = "simple-shop-app/dist/simple-shop-app/browser"
   functions = "simple-shop-app/netlify/functions"
