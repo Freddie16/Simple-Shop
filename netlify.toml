@@ -1,4 +1,7 @@
 [build]
   command = "cd simple-shop-app && npm install && ng build --configuration production"
-  publish = "simple-shop-app/dist/simple-shop-app/browser"  # Corrected to relative path
-  functions = "simple-shop-app/netlify/functions"
+  publish = "simple-shop-app/dist/simple-shop-app/browser"  # Relative path
+  functions = "simple-shop-app/netlify/functions"  # Relative path
+
+[functions]
+  directory = "simple-shop-app/netlify/functions"  # Relative path
