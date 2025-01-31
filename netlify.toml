@@ -1,6 +1,6 @@
 [build]
   command = "cd simple-shop-app && npm install && ng build --configuration production"
-  publish = "/opt/build/repo/simple-shop-app/dist/simple-shop-app/browser"
+  publish = "/opt/build/repo/simple-shop-app/dist/simple-shop-app/browser"  # Corrected path
 
 [functions]
   directory = "/opt/build/repo/simple-shop-app/netlify/functions"

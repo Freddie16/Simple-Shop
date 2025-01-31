@@ -17,9 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/simple-shop-app",
+            "outputPath": "dist/simple-shop-app/browser",  
             "index": "src/index.html",
-            "main": "src/main.ts",   
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -66,8 +66,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/simple-shop-app/server",
-            "main": "src/main.server.ts"  
-            
+            "main": "src/main.server.ts"
           },
           "configurations": {
             "production": {
