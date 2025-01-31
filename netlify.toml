@@ -1,3 +1,4 @@
 [build]
-  command = "cd simple-shop-app && npm install && ng build --configuration production"
-  publish = "simple-shop-app/dist/simple-shop-app/browser/browser"
+  base = "simple-shop-app"
+  command = "npm install && ng build --configuration production"
+  publish = "dist/simple-shop-app/browser/browser/browser"
