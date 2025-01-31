@@ -1,14 +1,12 @@
 [build]
-  command = "npm install && npm run build"
-  publish = "dist/simple-shop-app"
-  functions = "netlify/functions"
+  command = "npm install && npm run build && cp -r dist/simple-shop-app/server netlify/functions/"
+
+  publish = "dist/simple-shop-app/browser"
 
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/server"
   status = 200
 
-[dev]
-  command = "npm run start"
-  port = 4200
-  publish = "dist/simple-shop-app"
+[[functions]]
+  directory = "netlify/functions"
